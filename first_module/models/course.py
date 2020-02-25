@@ -17,6 +17,7 @@ class Course(models.Model):
     ], required=True, default='draft')
 
     #calling this function will change the state of the record to done...
+    #once the course is done we can not delete it :override unlink method ..
     def button_done(self):
         for rec in self:
             rec.write({'state': 'done'})
