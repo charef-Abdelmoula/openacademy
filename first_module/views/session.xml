@@ -1,0 +1,208 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+
+    <record model="ir.ui.view" id="first_module.list4">
+      <field name="name">first_module list</field>
+      <field name="model">first_module.session</field>
+      <field name="arch" type="xml">
+      <tree string="Session Tree" decoration-info="duration&lt;5" decoration-danger="duration&gt;15">
+          <field name="name"/>
+          <field name="start_date"/>
+          <field name="duration" invisible="1"/>
+          <field name="seats"/>
+          <field name="active"/>
+          <field name="course_id"/>
+          <field name="taken_seats" widget="progressbar"/>
+      </tree>
+      </field>
+
+      </record>
+ <!--form view-->
+      <record id="session_form_view" model="ir.ui.view">
+            <field name="name">Session Form</field>
+            <field name="model">first_module.session</field>
+            <field name="arch" type="xml">
+                <form string="Session">
+<!--                    <header>-->
+<!--                        <button name="button_done" string="Done" class="oe_highlight" type="object"/>-->
+<!--                        <button name="button_reset" string="Reset to Draft" states="done,cancel"-->
+<!--                                class="oe_highlight" type="object"/>-->
+<!--                        <button name="button_cancel" string="Cancel" type="object"/>-->
+<!--                        <field name="state" widget="statusbar" statusbar_visible="draft,done"/>-->
+<!--                    </header>-->
+                    <sheet>
+
+                        <div class="oe_title">
+<!--                             <field name="image" widget="image" class="oe_left oe_avatar" />-->
+                            <h3>
+                                <field name="name"/>
+                            </h3>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="duration"/>
+                                <field name="start_date"/>
+                                <field name="seats"/>
+                                <field name="taken_seats" widget="progressbar"/>
+
+                            </group>
+                            <group>
+                                <field name="course_id"/>
+                                <field name="instructor_id"/>
+
+
+<!--                                <field name="age"/>-->
+<!--                                <field name="gender"/>-->
+<!--                                <field name="country"/>-->
+<!--&lt;!&ndash;                                <field name="choices"/>&ndash;&gt;-->
+
+                            </group>
+                            <label for="attendee_ids"/>
+                            <field name="attendee_ids"/>
+
+                        </group>
+
+                    </sheet>
+<!--                    <div class="oe_chatter">-->
+
+<!--                    </div>-->
+
+                </form>
+
+            </field>
+        </record>
+    <!--search view-->
+  <record id="session_search_view" model="ir.ui.view">
+            <field name="name">Session Search View</field>
+            <field name="model">first_module.session</field>
+            <field name="arch" type="xml">
+                <search string="Search Session">
+
+
+
+                    <field name="name"/>
+
+                </search>
+            </field>
+        </record>
+      <!-- calendar view -->
+        <record model="ir.ui.view" id="session_calendar_view">
+            <field name="name">session.calendar</field>
+            <field name="model">first_module.session</field>
+            <field name="arch" type="xml">
+                <calendar string="Session Calendar" date_start="start_date" date_stop="end_date" color="instructor_id">
+                    <field name="name"/>
+                </calendar>
+            </field>
+        </record>
+<!--      gantt view-->
+      <record model="ir.ui.view" id="session_gantt_view">
+            <field name="name">session.gantt</field>
+            <field name="model">first_module.session</field>
+            <field name="arch" type="xml">
+                <gantt string="Session Gantt"
+                       date_start="start_date" date_stop="end_date"
+                       default_group_by='instructor_id'>
+                </gantt>
+            </field>
+        </record>
+<!--    graph-->
+      <record model="ir.ui.view" id="openacademy_session_graph_view">
+            <field name="name">first_module.session.graph</field>
+            <field name="model">first_module.session</field>
+            <field name="arch" type="xml">
+                <graph string="Participations by Courses">
+                    <field name="course_id"/>
+                    <field name="attendees_count" type="measure"/>
+                </graph>
+            </field>
+        </record>
+<!--      kanban-->
+          <record model="ir.ui.view" id="view_openacad_session_kanban">
+            <field name="name">first_module.session.kanban</field>
+            <field name="model">first_module.session</field>
+            <field name="arch" type="xml">
+                <kanban default_group_by="course_id">
+                    <field name="color"/>
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div
+                                    t-attf-class="oe_kanban_color_{{kanban_getcolor(record.color.raw_value)}}
+                                                  oe_kanban_global_click_edit oe_semantic_html_override
+                                                  oe_kanban_card {{record.group_fancy==1 ? 'oe_kanban_card_fancy' : ''}}">
+                                <div class="oe_dropdown_kanban">
+                                    <!-- dropdown menu -->
+                                    <div class="oe_dropdown_toggle">
+                                        <i class="fa fa-bars fa-lg" title="Manage" aria-label="Manage"/>
+                                        <ul class="oe_dropdown_menu">
+                                            <li>
+                                                <a type="delete">Delete</a>
+                                            </li>
+                                            <li>
+                                                <ul class="oe_kanban_colorpicker"
+                                                    data-field="color"/>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="oe_clear"></div>
+                                </div>
+                                <div t-attf-class="oe_kanban_content">
+                                    <!-- title -->
+                                    Session name:
+                                    <field name="name"/>
+                                    <br/>
+                                    Start date:
+                                    <field name="start_date"/>
+                                    <br/>
+                                    duration:
+                                    <field name="duration"/>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+      <!-- actions opening views on models -->
+
+    <record model="ir.actions.act_window" id="first_module.action_window4">
+      <field name="name">Sessions </field>
+      <field name="res_model">first_module.session</field>
+      <field name="view_mode">tree,form,calendar,gantt,graph,kanban</field>
+
+    </record>
+
+    <!-- menu categories -->
+
+    <menuitem name="Sessions" id="first_module.menu_4" parent="first_module.menu_root" action="first_module.action_window4"/>
+
+
+      <record model="ir.ui.view" id="wizard_form_view">
+            <field name="name">wizard.form</field>
+            <field name="model">first_module.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Add Attendees">
+                    <group>
+<!--                        <field name="session_id"/>-->
+                        <field name="session_ids"/>
+<!--                        subscribe to multiple sessions-->
+                        <field name="attendee_ids"/>
+                    </group>
+                    <footer>
+                        <button  name="subscribe" type="object" string="Subscribe" class="oe_highlight"/>
+                        or
+                        <button special="cancel" string="Cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <act_window id="launch_session_wizard"
+                    name="Add Attendees"
+                    binding_model="first_module.session"
+                    res_model="first_module.wizard"
+                    view_mode="form"
+                    target="new"/>
+  </data>
+</odoo>

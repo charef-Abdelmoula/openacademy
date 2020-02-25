@@ -1,0 +1,497 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* first_module
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 13.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-02-24 10:43+0000\n"
+"PO-Revision-Date: 2020-02-24 10:43+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: first_module
+#: model_terms:ir.ui.view,arch_db:first_module.view_openacad_session_kanban
+msgid ""
+"<br/>\n"
+"                                    date de début:"
+msgstr ""
+
+#. module: first_module
+#: model_terms:ir.ui.view,arch_db:first_module.view_openacad_session_kanban
+msgid ""
+"<br/>\n"
+"                                    durée:"
+msgstr ""
+
+#. module: first_module
+#: model_terms:ir.ui.view,arch_db:first_module.view_openacad_session_kanban
+msgid "<i class=\"fa fa-bars fa-lg\" title=\"Manage\" aria-label=\"Manage\"/>"
+msgstr ""
+
+#. module: first_module
+#: model:ir.model.fields,field_description:first_module.field_first_module_session__active
+msgid "Active"
+msgstr ""
+
+#. module: first_module
+#: model:ir.actions.act_window,name:first_module.launch_session_wizard
+#: model_terms:ir.ui.view,arch_db:first_module.wizard_form_view
+msgid "ajouter .."
+msgstr ""
+
+#. module: first_module
+#: model:ir.model.fields,field_description:first_module.field_first_module_prof__age
+#: model:ir.model.fields,field_description:first_module.field_school_student__age
+msgid "Age"
+msgstr ""
+
+#. module: first_module
+#: model:ir.ui.menu,name:first_module.menu_2_list1
+msgid "tous les proff"
+msgstr ""
+
+#. module: first_module
+#: model:ir.ui.menu,name:first_module.menu_1_list
+msgid "tous les étudiants"
+msgstr ""
+
+#. module: first_module
+#: model:ir.model.fields,field_description:first_module.field_res_partner__session_ids
+#: model:ir.model.fields,field_description:first_module.field_res_users__session_ids
+msgid "Attended Sessions"
+msgstr ""
+
+#. module: first_module
+#: model:ir.model.fields,field_description:first_module.field_first_module_session__attendee_ids
+#: model:ir.model.fields,field_description:first_module.field_first_module_wizard__attendee_ids
+msgid "Attendees"
+msgstr ""
+
+#. module: first_module
+#: model:ir.model.fields,field_description:first_module.field_first_module_session__attendees_count
+msgid "Attendees count"
+msgstr ""
+
+#. module: first_module
+#: model_terms:ir.ui.view,arch_db:first_module.prof_form_view
+#: model_terms:ir.ui.view,arch_db:first_module.wizard_form_view
+msgid "Cancel"
+msgstr ""
+
+#. module: first_module
+#: model:ir.model.fields.selection,name:first_module.selection__first_module_prof__state__cancel
+msgid "Cancelled"
+msgstr ""
+
+#. module: first_module
+#: model:ir.model.fields,field_description:first_module.field_first_module_session__color
+msgid "Color"
+msgstr ""
+
+#. module: first_module
+#: model:ir.ui.menu,name:first_module.configuration_menu
+msgid "Configuration"
+msgstr ""
+
+#. module: first_module
+#: model:ir.model,name:first_module.model_res_partner
+msgid "Contact"
+msgstr ""
+
+#. module: first_module
+#: model:ir.actions.act_window,name:first_module.contact_list_action
+#: model:ir.ui.menu,name:first_module.contact_menu
+msgid "Contacts"
+msgstr ""
+
+#. module: first_module
+#: model:ir.model.fields,field_description:first_module.field_first_module_session__course_id
+msgid "Course"
+msgstr ""
+
+#. module: first_module
+#: model:ir.ui.menu,name:first_module.menu_3
+msgid "Couses"
+msgstr ""
+
+#. module: first_module
+#: model:ir.model.fields,field_description:first_module.field_first_module_course__create_uid
+#: model:ir.model.fields,field_description:first_module.field_first_module_first_module__create_uid
+#: model:ir.model.fields,field_description:first_module.field_first_module_prof__create_uid
+#: model:ir.model.fields,field_description:first_module.field_first_module_session__create_uid
+#: model:ir.model.fields,field_description:first_module.field_first_module_wizard__create_uid
+#: model:ir.model.fields,field_description:first_module.field_school_student__create_uid
+msgid "créé par "
+msgstr ""
+
+#. module: first_module
+#: model:ir.model.fields,field_description:first_module.field_first_module_course__create_date
+#: model:ir.model.fields,field_description:first_module.field_first_module_first_module__create_date
+#: model:ir.model.fields,field_description:first_module.field_first_module_prof__create_date
+#: model:ir.model.fields,field_description:first_module.field_first_module_session__create_date
+#: model:ir.model.fields,field_description:first_module.field_first_module_wizard__create_date
+#: model:ir.model.fields,field_description:first_module.field_school_student__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: first_module
+#: model_terms:ir.ui.view,arch_db:first_module.view_openacad_session_kanban
+msgid "Delete"
+msgstr ""
+
+#. module: first_module
+#: model:ir.model.fields,field_description:first_module.field_first_module_course__description
+#: model:ir.model.fields,field_description:first_module.field_first_module_first_module__description
+#: model:ir.model.fields,field_description:first_module.field_first_module_prof__description
+msgid "Description"
+msgstr ""
+
+#. module: first_module
+#: model:ir.model.fields,field_description:first_module.field_first_module_course__display_name
+#: model:ir.model.fields,field_description:first_module.field_first_module_first_module__display_name
+#: model:ir.model.fields,field_description:first_module.field_first_module_prof__display_name
+#: model:ir.model.fields,field_description:first_module.field_first_module_session__display_name
+#: model:ir.model.fields,field_description:first_module.field_first_module_wizard__display_name
+#: model:ir.model.fields,field_description:first_module.field_school_student__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: first_module
+#: model:ir.model.fields.selection,name:first_module.selection__first_module_prof__state__done
+#: model_terms:ir.ui.view,arch_db:first_module.prof_form_view
+msgid "Done"
+msgstr ""
+
+#. module: first_module
+#: model:ir.model.fields.selection,name:first_module.selection__first_module_prof__state__draft
+msgid "Draft"
+msgstr ""
+
+#. module: first_module
+#: model:ir.model.fields,field_description:first_module.field_first_module_session__duration
+msgid "Durée"
+msgstr ""
+
+#. module: first_module
+#: model:ir.model.fields,help:first_module.field_first_module_session__duration
+msgid "Duration in days"
+msgstr ""
+
+#. module: first_module
+#: model:ir.model.fields,field_description:first_module.field_first_module_session__end_date
+msgid "End Date"
+msgstr ""
+
+#. module: first_module
+#: model:ir.model.fields.selection,name:first_module.selection__first_module_prof__gender__female
+#: model:ir.model.fields.selection,name:first_module.selection__school_student__gender__female
+#: model_terms:ir.ui.view,arch_db:first_module.prof_search_view
+msgid "femme"
+msgstr ""
+
+#. module: first_module
+#: model:ir.model.fields,field_description:first_module.field_school_student__gender
+#: model_terms:ir.ui.view,arch_db:first_module.prof_search_view
+msgid "sexe"
+msgstr ""
+
+#. module: first_module
+#: model_terms:ir.ui.view,arch_db:first_module.prof_search_view
+msgid "Group By"
+msgstr ""
+
+#. module: first_module
+#: model:ir.model.fields,field_description:first_module.field_first_module_course__id
+#: model:ir.model.fields,field_description:first_module.field_first_module_first_module__id
+#: model:ir.model.fields,field_description:first_module.field_first_module_prof__id
+#: model:ir.model.fields,field_description:first_module.field_first_module_session__id
+#: model:ir.model.fields,field_description:first_module.field_first_module_wizard__id
+#: model:ir.model.fields,field_description:first_module.field_school_student__id
+msgid "ID"
+msgstr ""
+
+#. module: first_module
+#: model:ir.model.fields,field_description:first_module.field_school_student__photo
+msgid "Image"
+msgstr ""
+
+#. module: first_module
+#: model:ir.model.fields,field_description:first_module.field_first_module_session__instructor_id
+#: model:ir.model.fields,field_description:first_module.field_res_partner__instructor
+#: model:ir.model.fields,field_description:first_module.field_res_users__instructor
+msgid "Instructor"
+msgstr ""
+
+#. module: first_module
+#: model:ir.model.fields,field_description:first_module.field_first_module_course____last_update
+#: model:ir.model.fields,field_description:first_module.field_first_module_first_module____last_update
+#: model:ir.model.fields,field_description:first_module.field_first_module_prof____last_update
+#: model:ir.model.fields,field_description:first_module.field_first_module_session____last_update
+#: model:ir.model.fields,field_description:first_module.field_first_module_wizard____last_update
+#: model:ir.model.fields,field_description:first_module.field_school_student____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: first_module
+#: model:ir.model.fields,field_description:first_module.field_first_module_course__write_uid
+#: model:ir.model.fields,field_description:first_module.field_first_module_first_module__write_uid
+#: model:ir.model.fields,field_description:first_module.field_first_module_prof__write_uid
+#: model:ir.model.fields,field_description:first_module.field_first_module_session__write_uid
+#: model:ir.model.fields,field_description:first_module.field_first_module_wizard__write_uid
+#: model:ir.model.fields,field_description:first_module.field_school_student__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: first_module
+#: model:ir.model.fields,field_description:first_module.field_first_module_course__write_date
+#: model:ir.model.fields,field_description:first_module.field_first_module_first_module__write_date
+#: model:ir.model.fields,field_description:first_module.field_first_module_prof__write_date
+#: model:ir.model.fields,field_description:first_module.field_first_module_session__write_date
+#: model:ir.model.fields,field_description:first_module.field_first_module_wizard__write_date
+#: model:ir.model.fields,field_description:first_module.field_school_student__write_date
+msgid "sernière maj"
+msgstr ""
+
+#. module: first_module
+#: model:ir.model.fields.selection,name:first_module.selection__first_module_prof__gender__male
+#: model:ir.model.fields.selection,name:first_module.selection__school_student__gender__male
+#: model_terms:ir.ui.view,arch_db:first_module.prof_search_view
+msgid "Male"
+msgstr ""
+
+#. module: first_module
+#: model:ir.model.fields,field_description:first_module.field_first_module_session__name
+#: model:ir.model.fields,field_description:first_module.field_school_student__name
+#: model:ir.model.fields,help:first_module.field_first_module_first_module__name
+msgid "Name"
+msgstr ""
+
+#. module: first_module
+#: model:ir.model.fields,field_description:first_module.field_first_module_prof__name
+msgid "Name of prof"
+msgstr ""
+
+#. module: first_module
+#: model:ir.model.fields,field_description:first_module.field_first_module_prof__country
+#: model_terms:ir.ui.view,arch_db:first_module.prof_search_view
+msgid "Nationality"
+msgstr ""
+
+#. module: first_module
+#: model:ir.model.fields,field_description:first_module.field_first_module_session__seats
+msgid "Number of seats"
+msgstr ""
+
+#. module: first_module
+#: model:res.groups,name:first_module.group_manager
+msgid "OpenAcademy / Manager"
+msgstr ""
+
+#. module: first_module
+#: model:ir.model,name:first_module.model_first_module_course
+msgid "OpenAcademy Courses"
+msgstr ""
+
+#. module: first_module
+#: model:ir.model,name:first_module.model_first_module_session
+msgid "OpenAcademy Sessions"
+msgstr ""
+
+#. module: first_module
+#: model:ir.model.fields.selection,name:first_module.selection__school_student__gender__others
+msgid "Others"
+msgstr ""
+
+#. module: first_module
+#: model_terms:ir.ui.view,arch_db:first_module.openacademy_session_graph_view
+msgid "Participations by Courses"
+msgstr ""
+
+#. module: first_module
+#: model:ir.model,name:first_module.model_first_module_prof
+#: model_terms:ir.ui.view,arch_db:first_module.course_form_view
+#: model_terms:ir.ui.view,arch_db:first_module.prof_form_view
+msgid "Prof"
+msgstr ""
+
+#. module: first_module
+#: model:ir.ui.menu,name:first_module.menu_2
+msgid "Proffs"
+msgstr ""
+
+#. module: first_module
+#: model_terms:ir.ui.view,arch_db:first_module.prof_search_view
+msgid "Profs with gender as Female"
+msgstr ""
+
+#. module: first_module
+#: model_terms:ir.ui.view,arch_db:first_module.prof_search_view
+msgid "Profs with gender as Male"
+msgstr ""
+
+#. module: first_module
+#: model:ir.model.fields.selection,name:first_module.selection__first_module_prof__state__reset
+msgid "Reset"
+msgstr ""
+
+#. module: first_module
+#: model_terms:ir.ui.view,arch_db:first_module.prof_form_view
+msgid "Reset to Draft"
+msgstr ""
+
+#. module: first_module
+#: model:ir.model.fields,field_description:first_module.field_first_module_course__responsible_id
+msgid "Responsible"
+msgstr ""
+
+#. module: first_module
+#: model_terms:ir.ui.view,arch_db:first_module.course_search_view
+msgid "Search Course"
+msgstr ""
+
+#. module: first_module
+#: model_terms:ir.ui.view,arch_db:first_module.prof_search_view
+msgid "Search Prof"
+msgstr ""
+
+#. module: first_module
+#: model_terms:ir.ui.view,arch_db:first_module.session_search_view
+msgid "Search Session"
+msgstr ""
+
+#. module: first_module
+#: model:ir.model.fields,field_description:first_module.field_first_module_wizard__session_id
+#: model_terms:ir.ui.view,arch_db:first_module.session_form_view
+msgid "Session"
+msgstr ""
+
+#. module: first_module
+#: model_terms:ir.ui.view,arch_db:first_module.session_calendar_view
+msgid "Session Calendar"
+msgstr ""
+
+#. module: first_module
+#: model_terms:ir.ui.view,arch_db:first_module.session_gantt_view
+msgid "Session Gantt"
+msgstr ""
+
+#. module: first_module
+#: model_terms:ir.ui.view,arch_db:first_module.list4
+msgid "Session Tree"
+msgstr ""
+
+#. module: first_module
+#: model_terms:ir.ui.view,arch_db:first_module.view_openacad_session_kanban
+msgid "Session name:"
+msgstr ""
+
+#. module: first_module
+#: model:ir.model.fields,field_description:first_module.field_first_module_wizard__session_ids
+#: model:ir.ui.menu,name:first_module.menu_4
+#: model_terms:ir.ui.view,arch_db:first_module.partner_instructor_form_view
+msgid "Sessions"
+msgstr ""
+
+#. module: first_module
+#: model:ir.model.fields,field_description:first_module.field_first_module_session__start_date
+msgid "Start Date"
+msgstr ""
+
+#. module: first_module
+#: model:ir.model.fields,field_description:first_module.field_first_module_prof__state
+msgid "State"
+msgstr ""
+
+#. module: first_module
+#: model:ir.model,name:first_module.model_school_student
+msgid "Student Record"
+msgstr ""
+
+#. module: first_module
+#: model:ir.ui.menu,name:first_module.menu_1
+msgid "Students"
+msgstr ""
+
+#. module: first_module
+#: model_terms:ir.ui.view,arch_db:first_module.wizard_form_view
+msgid "Abonner"
+msgstr ""
+
+#. module: first_module
+#: model:ir.model.fields,field_description:first_module.field_first_module_session__taken_seats
+msgid "Nombre de place"
+msgstr ""
+
+#. module: first_module
+#: model:res.partner.category,name:first_module.teacher1
+msgid "Proffesseur / Niveau 1"
+msgstr ""
+
+#. module: first_module
+#: model:res.partner.category,name:first_module.teacher2
+msgid "Proffesseur / Niveau 2"
+msgstr ""
+
+#. module: first_module
+#: model:ir.model.constraint,message:first_module.constraint_first_module_course_name_unique
+msgid "The course title must be unique"
+msgstr ""
+
+#. module: first_module
+#: model:ir.model.constraint,message:first_module.constraint_first_module_course_name_description_check
+msgid "The title of the course should not be the description"
+msgstr ""
+
+#. module: first_module
+#: model:ir.model.fields,field_description:first_module.field_first_module_course__name
+msgid "titre"
+msgstr ""
+
+#. module: first_module
+#: model:ir.model.fields,field_description:first_module.field_first_module_first_module__name
+msgid "titre "
+msgstr ""
+
+#. module: first_module
+#: model:ir.model,name:first_module.model_first_module_wizard
+msgid "Wizard: Quick Registration of Attendees to Sessions"
+msgstr ""
+
+#. module: first_module
+#: model:ir.model,name:first_module.model_first_module_first_module
+msgid "first module By Charef Abdelmoula"
+msgstr ""
+
+#. module: first_module
+#: model:ir.ui.menu,name:first_module.menu_root
+msgid "first_module"
+msgstr ""
+
+#. module: first_module
+#: model:ir.actions.act_window,name:first_module.action_window
+#: model:ir.actions.act_window,name:first_module.action_window1
+#: model:ir.actions.act_window,name:first_module.action_window3
+#: model:ir.actions.act_window,name:first_module.action_window4
+msgid "first_module window"
+msgstr ""
+
+#. module: first_module
+#: model:ir.model.fields,field_description:first_module.field_first_module_prof__gender
+msgid "sexe"
+msgstr ""
+
+#. module: first_module
+#: model:ir.model.fields,field_description:first_module.field_first_module_prof__image
+msgid "image"
+msgstr ""
+
+#. module: first_module
+#: model_terms:ir.ui.view,arch_db:first_module.wizard_form_view
+msgid "or"
+msgstr ""

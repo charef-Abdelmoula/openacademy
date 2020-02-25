@@ -1,0 +1,87 @@
+<odoo>
+    <data>
+        <!-- explicit list view definition -->
+        <record model="ir.ui.view" id="first_module.list1">
+            <field name="name">first_module list</field>
+            <field name="model">first_module.prof</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="description"/>
+                    <field name="age"/>
+                    <field name="gender"/>
+                    <field name="country"/>
+                </tree>
+            </field>
+            </record>
+            <!--form view-->
+            <record id="prof_form_view" model="ir.ui.view">
+            <field name="name">Prof Form</field>
+            <field name="model">first_module.prof</field>
+            <field name="arch" type="xml">
+                <form string="Prof">
+                    <sheet>
+                        <div class="oe_title">
+                            <field name="image" widget="image" class="oe_left oe_avatar" />
+                            <h3>
+                                <field name="name"/>
+                            </h3>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="description"/>
+                            </group>
+                        <group>
+                            <field name="age"/>
+                            <field name="gender"/>
+                            <field name="country"/>
+                        </group>
+                        </group>
+                    </sheet>
+                    <div class="oe_chatter">
+                </div>
+                </form>
+            </field>
+            </record>
+            <!--search view-->
+            <record id="prof_search_view" model="ir.ui.view">
+            <field name="name">Prof Search View</field>
+            <field name="model">first_module.prof</field>
+            <field name="arch" type="xml">
+            <search string="Search Prof">
+
+            <field name="age"/>
+
+            <field name="name"/>
+
+            <filter string="Male" name="male" domain="[('gender','=','male')]"
+            help="Profs with gender as Male"/>
+            <filter string="Female" name="female" domain="[('gender','=','female')]"
+            help="Profs with gender as Female"/>
+
+            <group  string="Group By">
+            <filter string="Nationality" name="country" context="{'group_by':'country'}"/>
+            <filter string="Gender" name="gender" context="{'group_by':'country'}"/>
+
+            </group>
+            </search>
+            </field>
+            </record>
+        <!-- actions opening views on models -->
+            <record model="ir.actions.act_window" id="first_module.action_window1">
+            <field name="name">first_module window</field>
+            <field name="res_model">first_module.prof</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <!-- Top menu item -->
+        <!-- menu categories -->
+        <menuitem name="Proffs" id="first_module.menu_2" parent="first_module.menu_root"/>
+        <!-- actions -->
+        <menuitem name="All profs" id="first_module.menu_2_list1" parent="first_module.menu_2"
+        action="first_module.action_window1"/>
+        <!--
+        <menuitem name="Server to list" id="first_module" parent="first_module.menu_2"
+        action="first_module.action_server"/>
+        -->
+    </data>
+</odoo>
