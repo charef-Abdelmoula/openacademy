@@ -1,6 +1,6 @@
 # Part of Odoo. See LICENSE file for full copyright and licensing details.
 
-from odoo import api, fields, models,_
+from odoo import api, fields, models, _
 
 
 class Student(models.Model):
@@ -12,8 +12,6 @@ class Student(models.Model):
     _description = 'Student Record'
     # default order field for searching results
     _order = 'name'
-
-
 
     name = fields.Char(string='Name', required=True, track_visibility=True)
     age = fields.Integer(string='Age', track_visibility=True)

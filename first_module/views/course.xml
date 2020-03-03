@@ -1,18 +1,19 @@
 <odoo>
-  <data>
-    <!-- explicit list view definition -->
-    <record model="ir.ui.view" id="first_module.list3">
-      <field name="name">first_module list</field>
-      <field name="model">first_module.course</field>
-      <field name="arch" type="xml">
-        <tree>
-          <field name="name"/>
-          <field name="description"/>
-        </tree>
-      </field>
-    </record>
- <!--form view-->
-    <record id="course_form_view" model="ir.ui.view">
+    <data>
+        <!-- explicit list view definition -->
+        <record model="ir.ui.view" id="first_module.list3">
+            <field name="name">first_module list</field>
+            <field name="model">first_module.course</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="description"/>
+                    <field name="teacher_id"/>
+                </tree>
+            </field>
+        </record>
+        <!--form view-->
+        <record id="course_form_view" model="ir.ui.view">
             <field name="name">Course Form</field>
             <field name="model">first_module.course</field>
             <field name="arch" type="xml">
@@ -34,36 +35,41 @@
                             <group>
                                 <field name="description"/>
                                 <field name="responsible_id"/>
+                                <label for="teacher_id"/>
+                                <field name="teacher_id"/>
                             </group>
                         </group>
                     </sheet>
                     <div class="oe_chatter">
-<!--                       this div is for the chatter:for notes ,message ,activities...-->
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="message_ids" widget="mail_thread"/>
                     </div>
                 </form>
             </field>
         </record>
 
-    <!--search view-->
+        <!--search view-->
 
-     <record id="course_search_view" model="ir.ui.view">
+        <record id="course_search_view" model="ir.ui.view">
             <field name="name">Course Search View</field>
             <field name="model">first_module.course</field>
             <field name="arch" type="xml">
                 <search string="Search Course">
                     <field name="name"/>
                     <field name="responsible_id"/>
+                    <field name="teacher_id"/>
                 </search>
             </field>
-     </record>
-      <!-- actions opening views on models -->
-    <record model="ir.actions.act_window" id="first_module.action_window3">
-          <field name="name">Courses </field>
-          <field name="res_model">first_module.course</field>
-          <field name="view_mode">tree,form</field>
-    </record>
-    <!-- menu categories -->
-    <menuitem name="Courses" id="first_module.menu_3" parent="first_module.menu_root" action="first_module.action_window3"/>
-    <!-- actions -->
-  </data>
+        </record>
+        <!-- actions opening views on models -->
+        <record model="ir.actions.act_window" id="first_module.action_window3">
+            <field name="name">Courses</field>
+            <field name="res_model">first_module.course</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <!-- menu categories -->
+        <menuitem name="Courses" id="first_module.menu_3" parent="first_module.menu_root"
+                  action="first_module.action_window3"/>
+        <!-- actions -->
+    </data>
 </odoo>

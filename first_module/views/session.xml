@@ -1,40 +1,54 @@
 <odoo>
-  <data>
-    <!-- explicit list view definition -->
+    <data>
+        <!-- explicit list view definition -->
 
-    <record model="ir.ui.view" id="first_module.list4">
-      <field name="name">first_module list</field>
-      <field name="model">first_module.session</field>
-      <field name="arch" type="xml">
-      <tree string="Session Tree" decoration-info="duration&lt;5" decoration-danger="duration&gt;15">
-          <field name="name"/>
-          <field name="start_date"/>
-          <field name="duration" invisible="1"/>
-          <field name="seats"/>
-          <field name="active"/>
-          <field name="course_id"/>
-          <field name="taken_seats" widget="progressbar"/>
-      </tree>
-      </field>
+        <record model="ir.ui.view" id="first_module.list4">
+            <field name="name">first_module list</field>
+            <field name="model">first_module.session</field>
+            <field name="arch" type="xml">
+                <tree string="Session Tree" decoration-info="duration&lt;5" decoration-danger="duration&gt;15">
+                    <field name="name"/>
+                    <field name="start_date"/>
+                    <field name="duration" invisible="1"/>
+                    <field name="seats"/>
+                    <field name="active"/>
+                    <field name="course_id"/>
+                    <field name="taken_seats" widget="progressbar"/>
+                </tree>
+            </field>
 
-      </record>
- <!--form view-->
-      <record id="session_form_view" model="ir.ui.view">
+        </record>
+        <!--form view-->
+        <record id="session_form_view" model="ir.ui.view">
             <field name="name">Session Form</field>
             <field name="model">first_module.session</field>
             <field name="arch" type="xml">
                 <form string="Session">
-<!--                    <header>-->
-<!--                        <button name="button_done" string="Done" class="oe_highlight" type="object"/>-->
-<!--                        <button name="button_reset" string="Reset to Draft" states="done,cancel"-->
-<!--                                class="oe_highlight" type="object"/>-->
-<!--                        <button name="button_cancel" string="Cancel" type="object"/>-->
-<!--                        <field name="state" widget="statusbar" statusbar_visible="draft,done"/>-->
-<!--                    </header>-->
+                    <header>
+                        <button name="button_done" string="Done" class="oe_highlight" type="object"/>
+                        <!--                        <button string="Facturer" class="oe_highlight" name="facturer" type="object"-->
+                        <!--                                attrs="{'invisible': [ ('state', '!=', 'validate')]}"></button>-->
+
+
+                        <button string="CREATE INVOICE k" name="facturer" type="object" class="oe_highlight"
+                                states="done,cancel"/>
+                        <!--                        <button name="button_reset" string="CREATE INVOICE" states="done,cancel"-->
+                        <!--                                class="oe_highlight" type="object"/>-->
+                        <button name="button_reset" string="Reset to Draft" states="done,cancel"
+                                class="oe_highlight" type="object"/>
+                        <button name="button_cancel" string="Cancel" type="object"/>
+                        <field name="state" widget="statusbar" statusbar_visible="draft,done"/>
+                    </header>
                     <sheet>
+                        <div class="oe_button_box" name="button_box">
+                            <button name="action_view_invoice" type="object" class="oe_stat_button"
+                                    icon="fa-pencil-square-o">
+                                <field name="invoice_count" widget="statinfo" string="Invoices"/>
+                            </button>
+                        </div>
 
                         <div class="oe_title">
-<!--                             <field name="image" widget="image" class="oe_left oe_avatar" />-->
+                            <!--                             <field name="image" widget="image" class="oe_left oe_avatar" />-->
                             <h3>
                                 <field name="name"/>
                             </h3>
@@ -52,10 +66,10 @@
                                 <field name="instructor_id"/>
 
 
-<!--                                <field name="age"/>-->
-<!--                                <field name="gender"/>-->
-<!--                                <field name="country"/>-->
-<!--&lt;!&ndash;                                <field name="choices"/>&ndash;&gt;-->
+                                <!--                                <field name="age"/>-->
+                                <!--                                <field name="gender"/>-->
+                                <!--                                <field name="country"/>-->
+                                <!--&lt;!&ndash;                                <field name="choices"/>&ndash;&gt;-->
 
                             </group>
                             <label for="attendee_ids"/>
@@ -64,29 +78,25 @@
                         </group>
 
                     </sheet>
-<!--                    <div class="oe_chatter">-->
+                    <!--                    <div class="oe_chatter">-->
 
-<!--                    </div>-->
+                    <!--                    </div>-->
 
                 </form>
 
             </field>
         </record>
-    <!--search view-->
-  <record id="session_search_view" model="ir.ui.view">
+        <!--search view-->
+        <record id="session_search_view" model="ir.ui.view">
             <field name="name">Session Search View</field>
             <field name="model">first_module.session</field>
             <field name="arch" type="xml">
                 <search string="Search Session">
-
-
-
                     <field name="name"/>
-
                 </search>
             </field>
         </record>
-      <!-- calendar view -->
+        <!-- calendar view -->
         <record model="ir.ui.view" id="session_calendar_view">
             <field name="name">session.calendar</field>
             <field name="model">first_module.session</field>
@@ -96,8 +106,8 @@
                 </calendar>
             </field>
         </record>
-<!--      gantt view-->
-      <record model="ir.ui.view" id="session_gantt_view">
+        <!--      gantt view-->
+        <record model="ir.ui.view" id="session_gantt_view">
             <field name="name">session.gantt</field>
             <field name="model">first_module.session</field>
             <field name="arch" type="xml">
@@ -107,8 +117,8 @@
                 </gantt>
             </field>
         </record>
-<!--    graph-->
-      <record model="ir.ui.view" id="openacademy_session_graph_view">
+        <!--    graph-->
+        <record model="ir.ui.view" id="openacademy_session_graph_view">
             <field name="name">first_module.session.graph</field>
             <field name="model">first_module.session</field>
             <field name="arch" type="xml">
@@ -118,8 +128,8 @@
                 </graph>
             </field>
         </record>
-<!--      kanban-->
-          <record model="ir.ui.view" id="view_openacad_session_kanban">
+        <!--      kanban-->
+        <record model="ir.ui.view" id="view_openacad_session_kanban">
             <field name="name">first_module.session.kanban</field>
             <field name="model">first_module.session</field>
             <field name="arch" type="xml">
@@ -164,33 +174,34 @@
                 </kanban>
             </field>
         </record>
-      <!-- actions opening views on models -->
+        <!-- actions opening views on models -->
 
-    <record model="ir.actions.act_window" id="first_module.action_window4">
-      <field name="name">Sessions </field>
-      <field name="res_model">first_module.session</field>
-      <field name="view_mode">tree,form,calendar,gantt,graph,kanban</field>
+        <record model="ir.actions.act_window" id="first_module.action_window4">
+            <field name="name">Sessions</field>
+            <field name="res_model">first_module.session</field>
+            <field name="view_mode">tree,form,calendar,gantt,graph,kanban</field>
 
-    </record>
+        </record>
 
-    <!-- menu categories -->
+        <!-- menu categories -->
 
-    <menuitem name="Sessions" id="first_module.menu_4" parent="first_module.menu_root" action="first_module.action_window4"/>
+        <menuitem name="Sessions" id="first_module.menu_4" parent="first_module.menu_root"
+                  action="first_module.action_window4"/>
 
 
-      <record model="ir.ui.view" id="wizard_form_view">
+        <record model="ir.ui.view" id="wizard_form_view">
             <field name="name">wizard.form</field>
             <field name="model">first_module.wizard</field>
             <field name="arch" type="xml">
                 <form string="Add Attendees">
                     <group>
-<!--                        <field name="session_id"/>-->
+                        <!--                        <field name="session_id"/>-->
                         <field name="session_ids"/>
-<!--                        subscribe to multiple sessions-->
+                        <!--                        subscribe to multiple sessions-->
                         <field name="attendee_ids"/>
                     </group>
                     <footer>
-                        <button  name="subscribe" type="object" string="Subscribe" class="oe_highlight"/>
+                        <button name="subscribe" type="object" string="Subscribe" class="oe_highlight"/>
                         or
                         <button special="cancel" string="Cancel"/>
                     </footer>
@@ -204,5 +215,5 @@
                     res_model="first_module.wizard"
                     view_mode="form"
                     target="new"/>
-  </data>
+    </data>
 </odoo>

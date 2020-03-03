@@ -1,35 +1,212 @@
 <odoo>
     <data>
-         <template id="index">
+        <template id="index">
             <t t-call="website.layout">
-                <t t-set="title">New page</t>
-                    <div class="oe_structure">
-                        <div class="container">
-                            <h1>My first web page</h1>
-                            <p>Hello, world!</p>
+                <t t-set="title">Academy</t>
+                <div class="oe_structure">
+                    <div class="container">
+                        <br/>
+                        <div class="row">
+                            <div class="col-md-12 col-6 col-lg-6 col-xl-6">
+                                <a t-attf-href="/academy/{{var}}">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <div class="caption mt-3">
+                                                My Sessions
+                                                <i class="fa fa-arrow-circle-right float-right"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <br/>
+                        <div class="row">
+                            <div class="col-md-12 col-6 col-lg-6 col-xl-6">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="caption mt-3">
+                                            <a t-attf-href="#">Courses
+                                                <i class="fa fa-arrow-circle-right float-right"/>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <br/>
+                        <div class="row">
+                            <div class="col-md-12 col-6 col-lg-6 col-xl-6">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="caption mt-3">
+                                            <a t-attf-href="#">My Info
+                                                <i class="fa fa-arrow-circle-right float-right"/>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </t>
-        </template>
-<!--
-        <template id="listing">
-          <ul>
-            <li t-foreach="objects" t-as="object">
-              <a t-attf-href="#{ root }/objects/#{ object.id }">
-                <t t-esc="object.display_name"/>
-              </a>
-            </li>
-          </ul>
-        </template>
-        <template id="object">
-          <h1><t t-esc="object.display_name"/></h1>
-          <dl>
-            <t t-foreach="object._fields" t-as="field">
-              <dt><t t-esc="field"/></dt>
-              <dd><t t-esc="object[field]"/></dd>
+                </div>
             </t>
-          </dl>
         </template>
--->
+        <!--        bigraphie template-->
+        <template id="biography">
+            <t t-call="portal.portal_layout">
+                <a style="height:20px;width:20px;border-radius:50%;text-align:center"
+                   class="btn btn-primary  float-right" t-attf-href="/session_create">+
+                </a>
+                <div id="wrap">
+                    <div class="oe_structure" id="oe_structure_helpdesk_index_1"/>
+                    <div class="container oe_website_rating_team">
+                        <h2 class="mt-2">Your Sessions</h2>
+                        <div class="oe_structure" id="oe_structure_helpdesk_index_2"/>
+                        <div class="row">
+                            <t t-foreach="person" t-as="teacher">
+                                <t t-foreach="teacher.instruct" t-as="sess">
+                                    <div class="col-md-6 col-4 col-lg-4 col-xl-4">
+                                        <div class="card">
+                                            <div class="card-body">
+                                                <div class="caption">
+                                                    <h4>
+                                                        <t t-esc="sess.name"/>
+                                                    </h4>
+                                                    <div class="text-muted">
+                                                        Session duration :
+                                                        <t t-esc="sess.duration"/>
+                                                    </div>
+
+                                                    <div class="text-muted">
+                                                        click on the botton to see more details about this session
+                                                    </div>
+                                                </div>
+                                                <div class="caption mt-3">
+                                                    <p>
+                                                        <a class="btn btn-primary btn-lg btn-block"
+                                                           t-attf-href="/gg/{{sess.id}}"><i
+                                                                class="fa fa-arrow-circle-right "/>See session's details
+                                                        </a>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </t>
+                            </t>
+                        </div>
+                    </div>
+                    <div class="oe_structure" id="oe_structure_helpdesk_index_3"/>
+                </div>
+            </t>
+        </template>
+        <template id="sessions">
+            <t t-call="website.layout">
+                <t t-set="title">Academy</t>
+                <div class="oe_structure">
+                    <div class="container">
+                        <br/>
+                        <br/>
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Id</th>
+                                    <th scope="col">Session name</th>
+                                    <th scope="col">session duration</th>
+                                    <th scope="col">sessions taken seats</th>
+                                    <th scope="col">Modify</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <t t-foreach="sessions" t-as="session">
+                                    <tr>
+                                        <th scope="row">
+                                            <t t-esc="session.id"/>
+                                        </th>
+                                        <td>
+                                            <t t-esc="session.name"/>
+                                        </td>
+                                        <td>
+                                            <t t-esc="session.duration"/>
+                                        </td>
+                                        <td>
+                                            <t t-esc="session.taken_seats"/>
+                                        </td>
+                                        <td>
+                                            <a class="btn btn-primary  btn-block"
+                                            ><i
+                                                    class="fa fa-arrow-circle-right "/>Modify m
+                                            </a>
+
+                                        </td>
+
+                                    </tr>
+                                    <script>
+                                        function myFunction() {
+                                        var x = document.getElementById("modi");
+                                        if (x.style.display === "none") {
+                                        x.style.display = "block";
+                                        } else {
+                                        x.style.display = "none";
+                                        }
+                                        }
+                                    </script>
+                                    <tr id="modi" style="display:block">
+
+                                        <form id="comment" action="/modify_session/session" method="GET">
+
+
+                                            <!--                        <td> <input id="ss" name="ss" t-att-value="session.id" /></td>-->
+                                            <td>
+                                                <input id="id_sess" name="id_sess" t-att-value="7"/>
+                                            </td>
+                                            <td>
+                                                <input id="session_name" name="session_name"/>
+                                            </td>
+                                            <td>
+                                                <input name="session_duration"/>
+                                            </td>
+                                            <!--                        <td><input name="session_taken_seats" /></td>-->
+                                            <td>
+                                                <input type="submit" value="Submit Form"/>
+                                            </td>
+                                        </form>
+                                    </tr>
+                                </t>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </t>
+        </template>
+        <template id="modify_session">
+            <t t-call="website.layout">
+                <t t-set="title">Academy</t>
+
+            </t>
+            ++
+        </template>
+        <template id="create_session">
+            <t t-call="website.layout">
+                <t t-set="title">Create a new session</t>
+                <form id="comment" action="/modify_session/session" method="GET">
+                    <!--                        <td> <input id="ss" name="ss" t-att-value="session.id" /></td>-->
+                    <td>
+                        <input id="id_sess" name="id_sess" t-att-value="7"/>
+                    </td>
+                    <td>
+                        <input id="session_name" name="session_name"/>
+                    </td>
+                    <td>
+                        <input name="session_duration"/>
+                    </td>
+                    <!--                        <td><input name="session_taken_seats" /></td>-->
+                    <td>
+                        <input type="submit" value="Submit Form"/>
+                    </td>
+                </form>
+            </t>
+        </template>
     </data>
 </odoo>

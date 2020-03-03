@@ -1,0 +1,32 @@
+<odoo>
+    <record id="action_academy_teachers" model="ir.actions.act_window">
+        <field name="name">Academy teachers</field>
+        <field name="res_model">first_module.teacher</field>
+    </record>
+    <record id="academy_teacher_form" model="ir.ui.view">
+        <field name="name">Academy teachers: form</field>
+        <field name="model">first_module.teacher</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <label for="name"/>
+                    <field name="name"/>
+                    <label for="biography"/>
+                    <field name="biography"/>
+                    <field name="course_ids" widget="many2many" domain="[('teacher_id','=',False)]">
+                        <tree string="Courses" editable="bottom">
+                            <field name="name"/>
+                        </tree>
+                    </field>
+                </sheet>
+
+            </form>
+        </field>
+    </record>
+
+    <menuitem id="menu_academy_content" parent="first_module.menu_root"
+              name="Academy Content"/>
+    <menuitem id="menu_academy_content_teachers"
+              parent="menu_academy_content"
+              action="action_academy_teachers"/>
+</odoo>

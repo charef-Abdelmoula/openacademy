@@ -1,12 +1,16 @@
 from odoo import models, fields, api
 
+
 class Course(models.Model):
     _name = 'first_module.course'
     _description = "OpenAcademy Courses"
+    _inherit = 'mail.thread'
+    # _inherit = 'product.template'
 
     name = fields.Char(string="Title", required=True)
     description = fields.Text()
-    responsible_id = fields.Many2one('res.users',ondelete='set null', string="Responsible", index=True)
+    responsible_id = fields.Many2one('res.users', ondelete='set null', string="Responsible", index=True)
+    teacher_id = fields.Many2one('first_module.teacher', string="Teacher")
 
     # the state of the course
     state = fields.Selection([
@@ -16,8 +20,7 @@ class Course(models.Model):
         ('cancel', 'Cancelled'),
     ], required=True, default='draft')
 
-    #calling this function will change the state of the record to done...
-    #once the course is done we can not delete it :override unlink method ..
+    # calling this function will change the state of the record to done...
     def button_done(self):
         for rec in self:
             rec.write({'state': 'done'})
@@ -30,7 +33,8 @@ class Course(models.Model):
         for rec in self:
             rec.write({'state': 'cancel'})
 
-    def copy(self, default=None):#if we make a constraint on the field name to be unique :we can not duplicate =>override the function copy
+    def copy(self,
+             default=None):  # if we make a constraint on the field name to be unique :we can not duplicate =>override the function copy
         default = dict(default or {})
 
         copied_count = self.search_count(
@@ -42,7 +46,8 @@ class Course(models.Model):
 
         default['name'] = new_name
         return super(Course, self).copy(default)
- #sql constraints on the course title :must be unique
+
+    # sql constraints on the course title :must be unique
     _sql_constraints = [
         ('name_description_check',
          'CHECK(name != description)',

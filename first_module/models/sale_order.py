@@ -1,12 +1,13 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
-
 from odoo import fields, models
 
 
-class SaleOrder(models.Model):
-    # python-inherited models
+class SaleO(models.Model):
     _inherit = 'sale.order'
 
-    # new field to add to 'sale.order' model after of the 'date_order' field
-    additional_note = fields.Char(string='Additional Note')
-
+    # # Add a new column to the res.partner model, by default partners are not
+    # # instructors
+    # instructor = fields.Boolean("Instructor", default=False)
+    #
+    # session_ids = fields.Many2many('first_module.session', string="Attended Sessions", readonly=True)
+    #
+    # instruct = fields.One2many('first_module.session', 'instructor_id', string="instruct")

@@ -1,6 +1,7 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_first_module_first_module,first_module.first_module,model_first_module_first_module,base.group_user,1,1,1,1
 access_stud,school.student,model_school_student,base.group_user,1,1,1,1
+access_teacher,first_module.teacher,model_first_module_teacher,base.group_user,1,1,1,1
 access_prof,first_module.prof,model_first_module_prof,base.group_user,1,1,1,1
 access_course,first_module.course,model_first_module_course,base.group_user,1,1,1,1
 access_session,first_module.session,model_first_module_session,base.group_user,1,1,1,1,

@@ -1,0 +1,11 @@
+
+<odoo>
+   <data>
+      <record model="product.product" id="session_product">
+         <field name="name">Session</field>
+         <field name="type">service</field>
+         <field name="purchase_line_warn">warning</field>
+         <field name="sale_line_warn">no-message</field>
+      </record>
+   </data>
+</odoo>

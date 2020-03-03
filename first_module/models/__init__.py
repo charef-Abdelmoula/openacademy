@@ -7,6 +7,8 @@ from . import course
 from . import session
 from . import partner
 from . import wizard
-from . import sale_order
+from . import Invoice_model
+
+from . import teacher
 
 
