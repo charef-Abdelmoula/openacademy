@@ -17,7 +17,7 @@
     'category': 'Uncategorized',
     'version': '0.1',
     # any module necessary for this one to work correctly
-    'depends': ['base', 'website', 'board'],
+    'depends': ['base', 'website', 'board','account'],
 
     # any module necessary for this one to work correctly
 
